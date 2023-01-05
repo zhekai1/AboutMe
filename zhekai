@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>about me</title>
+    </head>
+    <body>
+    <h1>About Me</h1>
+    <h3><b>Zhe Kai</b></h3>
+    <img src="aboutme.jpg">
+    <br><br/>
+    <b>Information about me: </b>
+    <br><br/>
+    Age: <div class="age"></div> years old
+    <br></br>
+    I am a second year student studying in Republic Polytechnic,
+    <br><br/>
+    I am 18 years old this year and I enjoy playing games and 
+    <br><br/>
+    listening to music. 
+    <br><br/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script>
+        anime({
+            targets: '.age',
+            innerHTML: [0, 18],
+            easing: 'linear',
+            round: 1, 
+            duration: 2000
+        });
+        anime({
+            targets: '.',
+            translateY: -300,
+            rotate: 180,
+            delay: anime.stagger(300, {start: 1000}),
+            direction: 'alternate'
+        });
+        var animation = anime({
+            targets: '.aboutme.jpg',
+            translateX: 300,
+            scale: 2,
+            easing: 'easeInOutExpo',
+            direction: 'alternate', 
+            duration: 2000,
+            loop: true,
+            autoplay: false
+        });
+        document.querySelector('.play').onclick = animation.play;
+        document.querySelector('.pause').onclick = animation.pause;
+        document.querySelector('.restart').onclick = animation.restart;
+    </script>
+    </body>
+</html>
